@@ -1,27 +1,41 @@
-### 免安装，解压即用，启动文件是chrome.exe
-
-**主要参数：**
-- 启动chrome时，传入参数`--fingerprints=123123123`(正整数)，则指纹固定不变。当正整数更换，则获得一个新指纹。
-- 启动chrome时，不传参数--fingerprints，则每个访问请求的指纹全部随机生成。
-
-**其他参数：**
-- `--noimage` 抹除图片的访问请求。
-- `--lang="en-US"` 修改语言。
-- `--timezone="Asia/Tokyo"` 修改时区。
-- `--proxy-server="socks5://127.0.0.1:10808"`  加代理(不支持账号密码认证)
+免安装，解压即用，启动文件是chrome.exe
+任何问题和建议，都可以在我的博客下留言：https://blog.csdn.net/w1101662433
+或者联系作者QQ1101662433，期待你的建议，指纹浏览器可以做的更好
 
 
- ---
+主要功能：
+启动chrome时，传入参数--fingerprints=12341234(正整数，最大值为9个9，不传的话默认传值为当前时间戳)，每个不同值都对应一个不同的指纹。
 
-### 版本更新：
+其他参数：
+--noimage 抹除图片的访问请求。
+--lang=en-US 修改语言。
+--timezone=Asia/Tokyo 修改时区。
+--webrtc-ip=8.8.8.8 强制修改webrtc公网ip，默认禁用webrtc。
+--platform=mac 模拟其他操作系统。目前可选mac，linux，win。默认为win。
+--http-proxy=http://username:password@ip:port  http代理需要认证时可以代替--proxy-server
+--socks5-proxy=socks5://username:password@ip:port  socks5代理需要认证时可以代替--proxy-server
+--ignores=fonts,screen 不要修改我的fonts指纹和屏幕信息，多值用逗号分隔，可选值有：--ignores=fonts,webgpu,webgl,canvas,audio,clientrect,screen,tls,useragent,plugins
 
-v1.0.1：
-- 修复了pixelscan中webgl指纹不变的bug
-- 给 WebGL vendor 追加了随机数
-- 给 WebGL renderer 追加了随机数
-- 修改了无头模式下的WebGL renderer
-- 增加了无头模式下的UA随机变化。
+指纹和修改：
+- canvas指纹
+- plugins指纹
+- webGL指纹
+- webRTC禁用
+- audio指纹
+- ClientRects指纹
+- tls/ja4指纹
+- fonts指纹
+- webGPU指纹
+- 浏览器屏幕指纹
+- 浏览器版本和UserAgent
+- 时区和语言
+- 可绕过cdp检测
+- 可绕过常见无头检测
+- creepjs跑分为 D-
 
-v1.0.2：
-- 修复了selenium无头模式下版本不匹配导致卡死bug
-- 新增--timezone参数，可自定义修改时区。
+=========================================================================
+
+版本号：
+chromium 116.0.5845.163
+
+注意：成品仅供个人使用和学习，如需商用，请联系作者授权。
