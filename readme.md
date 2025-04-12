@@ -1,3 +1,5 @@
+下载链接: https://pan.baidu.com/s/1Gtn2Rgma2VtMPSf-5-lLMg?pwd=um4u 提取码: um4u
+
 免安装，解压即用，启动文件是chrome.exe
 
 任何问题和建议，都可以在我的博客下留言：https://blog.csdn.net/w1101662433
